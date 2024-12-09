@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;EX7/Core/Inc/updateClockBuff.h&apos; to &apos;updateClockBuffer.h&apos;" description="Rename resource &apos;updateClockBuff.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/updateClockBuff.h" name="updateClockBuffer.h" stamp="1729922415155" updateReferences="true"/>
+</session>

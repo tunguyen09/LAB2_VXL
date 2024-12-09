@@ -1,0 +1,39 @@
+14:39:15 **** Incremental Build of configuration Debug for project EX8 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/update7SEG.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/update7SEG.d" -MT"Core/Src/update7SEG.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/update7SEG.o"
+../Core/Src/main.c:256:1: warning: return type defaults to 'int' [-Wimplicit-int]
+  256 | HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:256:1: warning: conflicting types for 'HAL_TIM_PeriodElapsedCallback'
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:333,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:2069:6: note: previous declaration of 'HAL_TIM_PeriodElapsedCallback' was here
+ 2069 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/update7SEG.c: In function 'display7SEG':
+../Core/Src/update7SEG.c:15:21: error: 'SEG1_GPIO_Port' undeclared (first use in this function); did you mean 'SEG3_GPIO_Port'?
+   15 |   HAL_GPIO_WritePin(SEG1_GPIO_Port, SEG1_Pin, GPIO_PIN_RESET);
+      |                     ^~~~~~~~~~~~~~
+      |                     SEG3_GPIO_Port
+../Core/Src/update7SEG.c:15:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/update7SEG.c:15:37: error: 'SEG1_Pin' undeclared (first use in this function); did you mean 'SEG0_Pin'?
+   15 |   HAL_GPIO_WritePin(SEG1_GPIO_Port, SEG1_Pin, GPIO_PIN_RESET);
+      |                                     ^~~~~~~~
+      |                                     SEG0_Pin
+../Core/Src/update7SEG.c:19:21: error: 'SEG5_GPIO_Port' undeclared (first use in this function); did you mean 'SEG3_GPIO_Port'?
+   19 |   HAL_GPIO_WritePin(SEG5_GPIO_Port, SEG5_Pin, GPIO_PIN_RESET);
+      |                     ^~~~~~~~~~~~~~
+      |                     SEG3_GPIO_Port
+../Core/Src/update7SEG.c:19:37: error: 'SEG5_Pin' undeclared (first use in this function); did you mean 'SEG0_Pin'?
+   19 |   HAL_GPIO_WritePin(SEG5_GPIO_Port, SEG5_Pin, GPIO_PIN_RESET);
+      |                                     ^~~~~~~~
+      |                                     SEG0_Pin
+make: *** [Core/Src/subdir.mk:49: Core/Src/update7SEG.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+14:39:15 Build Failed. 6 errors, 2 warnings. (took 522ms)
+

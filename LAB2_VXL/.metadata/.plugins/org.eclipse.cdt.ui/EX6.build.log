@@ -1,0 +1,10 @@
+15:40:49 **** Build of configuration Debug for project EX6 ****
+make -j16 all 
+arm-none-eabi-size   EX6.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6964	     24	   1648	   8636	   21bc	EX6.elf
+Finished building: default.size.stdout
+ 
+
+15:40:50 Build Finished. 0 errors, 0 warnings. (took 257ms)
+
